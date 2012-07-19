@@ -29,7 +29,9 @@ else {
 HTML Example
 ------------
 ```html
-<a href="large/farm8.staticflickr.com/7225/6899206864_0d038b821c.jpg" rel="lightbox"><img src="regular/farm8.staticflickr.com/7225/6899206864_0d038b821c.jpg" alt="2012-03-19_20-06-06_770"></a>
+<a href="large/farm8.staticflickr.com/7225/6899206864_0d038b821c.jpg" rel="lightbox">
+	<img src="regular/farm8.staticflickr.com/7225/6899206864_0d038b821c.jpg" alt="2012-03-19_20-06-06_770">
+</a>
 ```
 
 Known issues
@@ -37,3 +39,8 @@ Known issues
 Images are cached using the same file name, so testing at multiple sizes can be troublesome. In practice, I don't see this being much of an issue, however.
 
 Potential violation of ToS for image hosting services. My aim is to continue to use Flickr as my repository of images. I looked through their various terms and didn't find anything that would preclude a trick such as this. However, they do have limits to the number of images you can have on one page (max 30, as of this writing). If you're using another service, YMMV.
+
+License
+-------
+copyright 2012, Nathanael Phillips
+Released under the MIT License
