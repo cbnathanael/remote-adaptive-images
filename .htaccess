@@ -1,0 +1,27 @@
+# Responsive Images 
+# Mobile-First images that scale responsively and responsibly
+# Copyright 2010, Scott Jehl, Filament Group, Inc 
+# Dual licensed under the MIT or GPL Version 2 licenses. 
+# //Start Responsive Images 
+RewriteEngine On
+# direct image requests to temp
+#RewriteCond %{QUERY_STRING} full=(.*)&?
+RewriteCond %{HTTP_COOKIE} res=960 [NC]
+RewriteRule large/(.*)\.(jpe?g|png|gif|webp)$ http://$1_b\.$2 [L]
+
+RewriteCond %{HTTP_COOKIE} res=960 [NC]
+RewriteRule regular/(.*)\.(jpe?g|png|gif|webp)$ http://$1\.$2 [L]
+
+RewriteCond %{HTTP_COOKIE} res=480 [NC]
+RewriteRule large/(.*)\.(jpe?g|png|gif|webp)$ http://$1\.$2 [L]
+
+RewriteCond %{HTTP_COOKIE} res=480 [NC]
+RewriteRule regular/(.*)\.(jpe?g|png|gif|webp)$ http://$1_m\.$2 [L]
+
+RewriteCond %{HTTP_COOKIE} !res [NC]
+RewriteRule large/(.*)\.(jpe?g|png|gif|webp)$ http://$1\.$2 [L]
+
+RewriteCond %{HTTP_COOKIE} !res [NC]
+RewriteRule regular/(.*)\.(jpe?g|png|gif|webp)$ http://$1_m\.$2 [L]
+# ignore trap for non-image requests, rewrite URL without trap segment
+# //End Responsive Images
